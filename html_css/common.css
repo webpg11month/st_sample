@@ -138,8 +138,8 @@
 
   .hamburger-content li.hamburger-item , li.hamburger-item-1 {
       border-bottom: 2px solid #fafafa;
-      padding-top: 4vw;
-      padding-bottom: 4vw;
+      padding-top: 8vw;
+      padding-bottom: 6vw;
       background-color: #5c5555;
       color: #000000;
       margin:0 auto;
@@ -167,11 +167,11 @@
       margin:0 auto;
       margin-left: 12vw;
       font-size: 17px; 
-  }
+  } 
   li.hamburger-item-2{  
       border-top:2px solid #fafafa ;
-      padding-top: 20%;
-      padding-bottom: 25%;
+      padding-top: 15%;
+      padding-bottom: 15%;
       text-decoration: none;
       list-style: none;  
   }

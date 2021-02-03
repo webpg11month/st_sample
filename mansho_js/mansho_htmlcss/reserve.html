@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <!-- 初期設定 -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ラーメン検索とラーメン空き情報を確認できる">
+  <!-- CSS読込み -->
+  <link href="css/header.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <link href="css/footer.css" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link href="css/ress.css" rel="stylesheet">
+  <!-- ファビコン -->
+  <link rel="icon" type="img/png" href="img/favicon/favicon.png">
+  <!-- タイトル -->
+  <title>RamenUmashi</title>
+</head>
+
+<body>
+  <div class="wrapper-header">
+    <header>
+      <!-- 修正箇所 -->
+      <!-- 背景画像読込=home -->
+      <div id="ramen-home" class="big-bg">
+        <div class="page-header wrapper">
+          <a class="logo-flex" href="index.html">
+            <img class="fade-main" id="ramen-logo" src="img/logo/ramen-log.png" alt="">
+          </a>
+          <a class="logo-flex" href="index.html">
+            <h1  id="logo-font">
+              RamenUmashi
+            </h1>
+          </a>
+          <!-- 修正箇所 -->
+          <nav class="header-nav-list">
+            <ul class="main-nav">
+              <li>
+                <a class="header-link1-1" href="login.html">Login</a>
+              </li>
+              <li>
+                <a class="header-link1-1" href="register.html">Register</a>
+              </li>
+              <li>
+                <a class="header-link1-1" href="umashi.html">RamenUmashiについて</a>
+              </li>
+            </ul>
+          </nav>
+          <!-- 修正箇所 -->
+          <nav class="hamburger-none">
+          <!-- 修正箇所 -->
+            <input type="checkbox" id="hamburger-check" class="chekc-hidden">
+            <!-- ハンバーガーアイコン -->
+            <label for="hamburger-check" class="hamburger-open">
+              <span></span>
+            </label>
+            <!-- メニュー -->
+            <!-- 追加設定　ハンバーガー -->
+            <label for="hamburger-check" class="hamburger-close"></label>
+            <nav class="hamburger-content">
+              <div id="hamburger-header-contents">
+                <h1>Contents</h1>
+              </div>
+              <div class="hamburger-main-contents">
+                <ul class="hamburger-list">
+                  <li class="hamburger-item">
+                    <a href="contact.html">問い合わせ</a>
+                  </li><!-- /.hamburger-item -->
+                  <li class="hamburger-item">
+                    <a href="help.html">ヘルプ</a>
+                  </li><!-- /.hamburger-item -->
+                  <li class="hamburger-item">
+                    <a href="register.html">新規登録</a>
+                  </li><!-- /.hamburger-item -->
+                  <li class="hamburger-item">
+                    <a href="login.html">ログイン</a>
+                  </li><!-- /.hamburger-item -->
+                  <li class="hamburger-item">
+                    <a href="umashi.html">RamenUmashiとは</a>
+                  </li><!-- /.hamburger-item -->
+                  <li class="hamburger-item">
+                    <a href="role.html">利用規約</a>
+                  </li><!-- /.hamburger-item -->
+                </ul><!-- /.hamburger-list -->
+              </div>
+              <div id="hamburger-footer-contents">
+                <small>&copy;RamenUmashi</small>
+              </div>
+            </nav>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="wrapper-reve">
+        <h1 id="wrapper-main-reve">お店予約</h1>
+        <!--  グリッド-->
+        <!--実際はポスト-->
+        <form action="mypage.html" method="get">
+          <div class="main-reve-grid">
+            <div id="main-reve-item">
+              人数：
+            </div>
+            <div id="main-reve-item1">
+              <select name="address">
+              <optgroup id="table-sheet" label="テーブル席">
+              <option value="2">２席</option>
+              <option value="3">３席</option>
+              <option value="4">４席</option>
+              </optgroup>
+              <option value="1">カウンター</option>
+              </select>
+            </div>
+          </div>
+          <div class="main-reve-grid">
+            <div id="main-reve-item2">
+              時間：
+            </div>
+            <div id="main-reve-item3">
+              <input type="time" name="password" value="" required>
+            </div>
+          </div>
+          <div class="reve-submit">
+            <input type="submit" name="submit" class="button" value="予約">
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <nav class="footer-nav-list">
+        <ul class="footer-nav">
+          <li>
+            <a class="footer-link1-1" href="contact.html">
+              お問い合わせ
+            </a>
+          </li>
+          <li>
+            <a class="footer-link1-1" href="role.html">サービス利用規約</a>
+          </li>
+          <li>
+            <a class="footer-link1-1" href="pivacy.html">個人情報保護方針</a>
+          </li>
+          <li>
+            <a class="footer-link1-1" href="privacy3.html">個人情報だの第三者提供方針</a>
+          </li>
+          <li>
+            <a class="footer-link1-1" href="help.html">ヘルプ</a>
+          </li>
+          <li>
+            <a class="footer-link1-1" href="cancellation.html">解約</a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="footer-nav-list-1">
+        <ul class="footer-nav-1">
+          <li>
+            <a class="footer-link2-1" href="https://twitter.com">
+              <i class="fab fa-twitter-square fa-6x"></i>
+            </a>
+            <p>Twitter</p>
+          </li>
+          <li>
+            <a class="footer-link1-1" href="https://www.instagram.com/?hl=ja"><i class="fab fa-instagram fa-6x"></i></a>
+            <p>instagram</p>
+          </li>
+          <li>
+            <a class="footer-link1-1" href="https://ja-jp.facebook.com"><i class="fab fa-facebook-f fa-6x"></i></a>
+            <p>FaceBook</p>
+          </li>
+        </ul>
+      </nav>
+      <h1 class="footer-umashi">RamenUmashi</h1>
+      <small class="footer-umashi-1">© 2020 RamenCP UmashiGP Inc.
+      </small>
+    </footer>
+    <div id="page_top"><a href="#"></a></div>
+  </div>
+</body>
+
+</html>

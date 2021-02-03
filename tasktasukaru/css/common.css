@@ -1,0 +1,33 @@
+@charset "utf-8";
+h1 {
+  text-align: center;
+}
+.list-mark {
+  margin: 0 auto;
+  width: 200px;
+  border: medium solid #ff00ff;
+}
+#task-list {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  flex-direction: column;
+  text-align: center;
+  list-style-type:decimal;
+}
+.common-article {
+  display: flex;
+  width: 500px;
+  margin: 0 auto;
+  border: medium solid #ff00ff;
+  flex-direction: column;
+}
+.common-label{
+  margin: 0 auto;
+}
+
+.common-input{
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 400px;
+}

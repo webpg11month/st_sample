@@ -1,0 +1,729 @@
+@charset "utf-8";
+/* スマホ用のCSSはメディアクエリの外に記述する */
+body {
+    /* フォントについて */
+    font-family: "Yu Gothic Medium",
+      "遊ゴシック Medium",
+      YuGothic,
+      "遊ゴシック体",
+      "ヒラギノ角ゴ Pro W3",
+      sans-serif;
+    line-height: 1.7;
+    color: #000000;
+  }
+@media screen and (max-width:768px) {
+    /* 481px以上に適用されるCSS（タブレット用+スマホ用） */
+    .header-flex{
+        height: 25vw;
+        display: flex;
+    }
+
+    .header-left {
+        width: 25%;
+        background-color: gray;
+    }
+    .header-hamburger{
+        width: 30%;
+        height: 5.5vw;
+        margin-top: 3.5vw;
+        margin-left: 3.5vw;
+        background-color: pink;
+    }
+    .header-center {
+        width: 50%;
+        background-color: gray;
+    }
+    .header-center-zebra{
+        font-size: 5rem;
+        font-family: 'Philosopher', serif;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 5vw;
+        font-size: 7.5vw;
+    }
+    .header-right {
+        width: 25%;
+        background-color: gray;
+    }
+    /*------------------------------
+    ハンバーガー実装
+    ------------------------------*/
+
+    /* チェックボックスは非表示に */
+    .chekc-hidden {
+        /*チェックボックス削除*/
+        display: none;
+    }
+
+    .hamburger-none {
+        display: contents;
+    }
+    .header-nav-list {
+        display: none;
+    }
+    .home-content {
+        display: none;
+    }
+
+    .hamburger-open {   
+        /*ハンバーガーアイコンの設置スペース ハンバーガーアイコンのフレックス指定 fixedで固定*/
+        width: 30%;
+        height: 7.5vw;
+        margin-top: 8vw;
+        margin-left: 3.5vw;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .hamburger-open span,
+    .hamburger-open span:before,
+    .hamburger-open span:after {
+        /* ハンバーガーメニューのアイコンの設定 */
+        content: '';
+        /*空白領域作成*/
+        display: block;
+        /*縦並びにする*/
+        height: 1vw;
+        /*高さ幅3pxに設定*/
+        width: 6vw;
+        /*横幅3pxに設定*/
+        border-radius: 1vw;
+        /*丸みを3pxにする*/
+        background: black;
+        /*#333に色指定*/
+        transition: 0.5s;
+        /*0.5s書けて×になる*/
+        position: absolute;
+        /*絶対配置(くっついてしまう)*/
+    }
+
+    .hamburger-open span:before {
+        /* 三本線のうち一番上の棒の位置調整 */
+        bottom: 2vw;
+        /*下の幅を8px*/
+    }
+
+    .hamburger-open span:after {
+        top: 2vw;
+    }
+
+    #hamburger-check:checked ~ .hamburger-open span {
+        background: rgba(255, 255, 255, 0);
+    }
+
+    /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+    #hamburger-check:checked ~ .hamburger-open span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+
+    #hamburger-check:checked ~ .hamburger-open span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+
+    .hamburger-item {
+        list-style: none;
+    }
+
+    .hamburger-close {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        position: fixed;
+        top: 0;
+        right: 100%;
+        z-index: 1;
+        transition: .5s;
+    }
+    #hamburger-check:checked ~ .hamburger-close {
+        left: 0;
+
+    }
+    .hamburger-content {
+        overflow-y: scroll;
+        flex: display;
+        width: 50%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 100%;
+        background-color: #5c5555;
+        transition: .5s;
+        flex-wrap: wrap;
+        z-index: 10;
+    }
+    #hamburger-check:checked ~ .hamburger-content {
+        right:50%;
+    }
+
+    .hamburger-content li.hamburger-item , li.hamburger-item-1 {
+        border-bottom: 2px solid #fafafa;
+        padding-top: 4vw;
+        padding-bottom: 4vw;
+        background-color: #5c5555;
+        color: #000000;
+        margin:0 auto;
+    }
+    .hamburger-item a{
+        margin-left: 2vw;
+        font-size: 20px;
+        text-decoration: none;
+        color: #fafafa;
+    }
+    .hamburger-item-1 a{
+        margin-left: 19vw;
+        font-size: 17px;
+        text-decoration: none;
+        text-align: right;
+        color: rgba(255, 255, 255, 0.8);    
+    }
+    .hamburger-item-footer{
+        margin-top: 40vw;
+    }
+    .hamburger-item-2 a{
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.8);   
+        background-color: #5c5555;
+        margin:0 auto;
+        margin-left: 8vw;
+        font-size: 17px; 
+
+    }
+    li.hamburger-item-2{
+        border-top:2px solid #fafafa ;
+        padding-top: 4vw;
+        padding-bottom: 4vw;
+        text-decoration: none;
+        list-style: none;  
+    }
+    /* --------完了--------- */
+    /*
+    検索処理 
+     */
+     .flex-search {
+        display: flex;
+      }
+      .header-fadeImg {
+        display: none;
+        z-index: 100;
+      }
+      #fadeInOutImg {
+        /* 大きさ指定 */
+        position: fixed;
+        z-index: 100;
+      }
+      .header-fadeImg{
+        width: 100%;
+        height: 100%;
+        padding: 5vw;
+        background-color: rgba(31, 25, 155, .5);
+        z-index: 125;
+      }
+      input[type="text"] {
+        background-color: rgba(255, 255, 255, .9);
+        border: 1px #fafafa solid;
+        border-radius: 20px;
+        width: 50vw;
+        height: 10vw;
+        font-size: 2rem;
+        z-index: 100;
+      }
+      .header-fadeImg-1 {
+        /* margin-left: 10vw; */
+        z-index: 100;
+      }
+      button{
+        width: 14vw;
+        height: 10vw;
+        font-size: 2.5rem;
+        font-weight: bold;
+        border-radius: 20px;
+        background: #fafafa;
+        z-index: 100;
+      }
+}
+@media screen and (max-width:320px) {
+       /* 481px以上に適用されるCSS（タブレット用+スマホ用） */
+    .header-flex{
+        height: 25vw;
+        display: flex;
+        background-color: gray;
+    }
+
+    .header-left {
+        width: 25%;
+        background-color: gray;
+    }
+    .header-center {
+        width: 50%;
+        background-color: gray;
+    }
+    .header-hamburger{
+        width: 30%;
+        height: 5.5vw;
+        margin-top: 3.5vw;
+        margin-left: 3.5vw;
+        background-color: pink;
+    }
+    .header-center-zebra{
+        font-size: 5rem;
+        font-family: 'Philosopher', serif;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 5vw;
+        font-size: 7.5vw;
+    }
+    /*------------------------------
+    ハンバーガー実装
+    ------------------------------*/
+
+    /* チェックボックスは非表示に */
+    .chekc-hidden {
+        /*チェックボックス削除*/
+        display: none;
+    }
+
+    .hamburger-none {
+        display: contents;
+    }
+    .header-nav-list {
+        display: none;
+    }
+    .home-content {
+        display: none;
+    }
+
+    .hamburger-open {
+        /*ハンバーガーアイコンの設置スペース ハンバーガーアイコンのフレックス指定 fixedで固定*/
+        width: 30%;
+        height: 7.5vw;
+        margin-top: 8vw;
+        margin-left: 3.5vw;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .hamburger-open span,
+    .hamburger-open span:before,
+    .hamburger-open span:after {
+        /* ハンバーガーメニューのアイコンの設定 */
+        content: '';
+        /*空白領域作成*/
+        display: block;
+        /*縦並びにする*/
+        height: 1vw;
+        /*高さ幅3pxに設定*/
+        width: 6vw;
+        /*横幅3pxに設定*/
+        border-radius: 1vw;
+        /*丸みを3pxにする*/
+        background: black;
+        /*#333に色指定*/
+        transition: 0.5s;
+        /*0.5s書けて×になる*/
+        position: absolute;
+        /*絶対配置(くっついてしまう)*/
+    }
+
+    .hamburger-open span:before {
+        /* 三本線のうち一番上の棒の位置調整 */
+        bottom: 2vw;
+        /*下の幅を8px*/
+    }
+
+    .hamburger-open span:after {
+        top: 2vw;
+    }
+
+    #hamburger-check:checked ~ .hamburger-open span {
+        background: rgba(255, 255, 255, 0);
+    }
+
+    /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+    #hamburger-check:checked ~ .hamburger-open span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+
+    #hamburger-check:checked ~ .hamburger-open span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+
+    .hamburger-item {
+        list-style: none;
+    }
+
+    .hamburger-close {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        position: fixed;
+        top: 0;
+        right: 100%;
+        z-index: 1;
+        transition: .5s;
+    }
+    #hamburger-check:checked ~ .hamburger-close {
+        left: 0;
+    }
+    .hamburger-content {
+        overflow-y: scroll;
+        flex: display;
+        width: 50%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 100%;
+        background-color: #5c5555;
+        transition: .5s;
+        flex-wrap: wrap;
+        z-index: 30;
+    }
+    #hamburger-check:checked ~ .hamburger-content {
+        right:50%;
+    }
+
+    .hamburger-content li.hamburger-item , li.hamburger-item-1 {
+        border-bottom: 2px solid #fafafa;
+        padding-top: 4vw;
+        padding-bottom: 4vw;
+        background-color: #5c5555;
+        color: #000000;
+        margin:0 auto;
+    }
+    .hamburger-item a{
+        margin-left: 2vw;
+        font-size: 20px;
+        text-decoration: none;
+        color: #fafafa;
+    }
+    .hamburger-item-1 a{
+        margin-left: 12vw;
+        font-size: 17px;
+        text-decoration: none;
+        text-align: right;
+        color: rgba(255, 255, 255, 0.8);    
+    }
+    .hamburger-item-footer{
+        margin-top: 40vw;
+    }
+    .hamburger-item-2 a{
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.8);   
+        background-color: #5c5555;
+        margin:0 auto;
+        margin-left: 8vw;
+        font-size: 17px; 
+    }
+    li.hamburger-item-2{
+        border-top:2px solid #fafafa ;
+        padding-top: 4vw;
+        padding-bottom: 4vw;
+        text-decoration: none;
+        list-style: none;  
+    }
+    /* --------完了--------- */
+    .header-right {
+        position: absolute;
+        width: 25%;
+        background-color: gray;
+        z-index: 30;
+    }
+    /*
+    検索処理
+     */
+     .flex-search {
+        display: flex;
+      }
+      .header-fadeImg {
+        display: none;
+      }
+      #fadeInOutImg {
+        /* 大きさ指定 */
+        position: absolute;
+      }
+      .header-fadeImg{
+        width: 100%;
+        height: 100%;
+        padding: 2vw;
+        padding-right: 20vw;
+        background-color: rgba(31, 25, 155, .5);
+        z-index: 25;
+      }
+      input[type="text"] {
+        background-color: rgba(255, 255, 255, .9);
+        border: 1px #fafafa solid;
+        border-radius: 20px;
+        width: 50vw;
+        height: 10vw;
+        font-size: 2rem;
+        z-index: 20;
+      }
+      .header-fadeImg-1 {
+        margin-left: 10vw;
+        z-index: 20;
+      }
+      button{
+        width: 14vw;
+        height: 10vw;
+        font-size: 2.5rem;
+        font-weight: bold;
+        border-radius: 20px;
+        background: #fafafa;
+        z-index: 20;
+      }
+}
+@media screen and (min-width:768px) and (max-width: 1024px) {
+    /* 481px以上に適用されるCSS（タブレット用+スマホ用） */
+    .header-flex{
+        height: 25vw;
+        display: flex;
+    }
+
+    .header-left {
+        width: 25%;
+        background-color: gray;
+        z-index: 1;
+    }
+    .header-hamburger{
+        width: 30%;
+        height: 5.5vw;
+        margin-top: 3.5vw;
+        margin-left: 3.5vw;
+        background-color: pink;
+    }
+    .header-center {
+        width: 50%;
+        background-color: gray;
+        z-index: 1;
+    }
+    .header-center-zebra{
+        font-size: 5rem;
+        font-family: 'Philosopher', serif;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 5vw;
+        font-size: 7.5vw;
+    }
+    /*------------------------------
+    ハンバーガー実装
+    ------------------------------*/
+
+    /* チェックボックスは非表示に */
+    .chekc-hidden {
+        /*チェックボックス削除*/
+        display: none;
+    }
+
+    .hamburger-none {
+        display: contents;
+    }
+    .header-nav-list {
+        display: none;
+    }
+    .home-content {
+        display: none;
+    }
+
+    .hamburger-open {   
+        /*ハンバーガーアイコンの設置スペース ハンバーガーアイコンのフレックス指定 fixedで固定*/
+        width: 30%;
+        height: 7.5vw;
+        margin-top: 8vw;
+        margin-left: 3.5vw;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .hamburger-open span,
+    .hamburger-open span:before,
+    .hamburger-open span:after {
+        /* ハンバーガーメニューのアイコンの設定 */
+        content: '';
+        /*空白領域作成*/
+        display: block;
+        /*縦並びにする*/
+        height: 1vw;
+        /*高さ幅3pxに設定*/
+        width: 6vw;
+        /*横幅3pxに設定*/
+        border-radius: 1vw;
+        /*丸みを3pxにする*/
+        background: black;
+        /*#333に色指定*/
+        transition: 0.5s;
+        /*0.5s書けて×になる*/
+        position: absolute;
+        /*絶対配置(くっついてしまう)*/
+    }
+
+    .hamburger-open span:before {
+        /* 三本線のうち一番上の棒の位置調整 */
+        bottom: 2vw;
+        /*下の幅を8px*/
+    }
+
+    .hamburger-open span:after {
+        top: 2vw;
+    }
+
+    #hamburger-check:checked ~ .hamburger-open span {
+        background: rgba(255, 255, 255, 0);
+    }
+
+    /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+    #hamburger-check:checked ~ .hamburger-open span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+
+    #hamburger-check:checked ~ .hamburger-open span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+
+    .hamburger-item {
+        list-style: none;
+    }
+
+    .hamburger-close {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        position: fixed;
+        top: 0;
+        right: 100%;
+        z-index: 1;
+        transition: .5s;
+    }
+    #hamburger-check:checked ~ .hamburger-close {
+        left: 0;
+    }
+    .hamburger-content {
+        overflow-y: scroll;
+        flex: display;
+        width: 50%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 100%;
+        background-color: #5c5555;
+        transition: .5s;
+        flex-wrap: wrap;
+        z-index: 10;
+    }
+    #hamburger-check:checked ~ .hamburger-content {
+        right:50%;
+    }
+
+    .hamburger-content li.hamburger-item , li.hamburger-item-1 {
+        border-bottom: 2px solid #fafafa;
+        padding-top: 4vw;
+        padding-bottom: 4vw;
+        background-color: #5c5555;
+        color: #000000;
+        margin:0 auto;
+              z-index: 10;
+    }
+    .hamburger-item a{
+        margin-left: 2vw;
+        font-size: 20px;
+        text-decoration: none;
+        color: #fafafa;
+              z-index: 10;
+    }
+    .hamburger-item-1 a{
+        margin-left: 19vw;
+        font-size: 17px;
+        text-decoration: none;
+        text-align: right;
+        color: rgba(255, 255, 255, 0.8);    
+              z-index: 10;
+    }
+    .hamburger-item-footer{
+        margin-top: 40vw;
+    }
+    .hamburger-item-2 a{
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.8);   
+        background-color: #5c5555;
+        margin:0 auto;
+        margin-left: 8vw;
+        font-size: 17px; 
+              z-index: 10;
+    }
+    li.hamburger-item-2{
+        border-top:2px solid #fafafa ;
+        padding-top: 4vw;
+        padding-bottom: 4vw;
+        text-decoration: none;
+        list-style: none;  
+        z-index: 10;
+    }
+    /* --------完了--------- */
+    /*
+    検索処理 
+     */
+     .flex-search {
+        display: flex;
+      }
+      .header-fadeImg {
+        display: none;
+        z-index: 100;
+      }
+      #fadeInOutImg {
+        /* 大きさ指定 */
+        position: fixed;
+        z-index: 100;
+      }
+      .header-fadeImg{
+        width: 100%;
+        height: 100%;
+        padding: 5vw;
+        background-color: rgba(31, 25, 155, .5);
+        z-index: 25;
+      }
+      input[type="text"] {
+        background-color: rgba(255, 255, 255, .9);
+        border: 1px #fafafa solid;
+        border-radius: 20px;
+        width: 50vw;
+        height: 10vw;
+        font-size: 2rem;
+        z-index: 100;
+      }
+      .header-fadeImg-1 {
+        margin-left: 10vw;
+        z-index: 100;
+      }
+      button{
+        width: 14vw;
+        height: 10vw;
+        font-size: 2.5rem;
+        font-weight: bold;
+        border-radius: 20px;
+        background: #fafafa;
+        z-index: 100;
+      }
+}
+
+@media screen and (min-width: 1025px) {
+    /* 1025px以上に適用されるCSS（PC用） */
+    /* ハンバーガー削除 */
+    .hamburger-none{
+        display: none;
+    }
+    .header-left {
+        width: 100%;
+        height: 35vh;
+        background-color: blue;
+    }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdn.rawgit.com/filipelinhares/ress/master/dist/ress.min.css">
+        <title>sample8</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style type="text/css">
+          .flex-search {
+            display: flex;
+          }
+          .header-fadeImg {
+            display: none;
+          }
+          #fadeInOutImg {
+            width: 8vw;
+            position: fixed;
+            margin-top: 3vw;
+            margin-left: 86vw;
+            z-index: 15;
+          }
+          #fadeInOutImg1 {
+            width: 8vw;
+            position: fixed;
+            margin-top: 3vw;
+            margin-left: 86vw;
+            z-index: 15;
+          }
+          .header-fadeImg{
+            width: 100%;
+            height: 100%;
+            padding: 5vw;
+            background-color: rgba(31, 25, 155, .5);
+            z-index: 10;
+          }
+          .backattr {
+            position: absolute;
+            margin-left: 10vw;
+            margin-top: 7vw;
+            z-index: 1;
+          }
+          
+          input[type="text"] {
+            background-color: rgba(255, 255, 255, .9);
+            border: 1px #fafafa solid;
+            border-radius: 20px;
+            width: 50vw;
+            height: 10vw;
+            font-size: 2rem;
+          }
+          .header-fadeImg-1 {
+            margin-left: 10vw;
+          }
+          button{
+            width: 14vw;
+            height: 10vw;
+            font-size: 2.5rem;
+            font-weight: bold;
+            border-radius: 20px;
+            background: #fafafa;
+          }
+        </style>
+        <script>
+            $(function(){
+              $(function() {
+                $(".switch-btn").on('click', function() {
+                $(".header-fadeImg").fadeToggle("slow",alertFunc);
+              });
+              function alertFunc(){
+                  if ($(this).css('display') === 'block') {
+                    $(".switch-btn").html("<img id='fadeInOutImg' src='search.png' alt='玉ねぎ'>");
+                  }else{
+                    $(".switch-btn").html("<img id='fadeInOutImg' src='search1.png' alt='検索'>");
+                  }
+                };
+              });   
+            });
+        </script>
+    </head>
+    <body>
+        <container class="hogehogeaa">
+        <nav class="flex-search">
+            <h1 class="backattr">hoge</h1>
+            <div class="switch-btn"><img id="fadeInOutImg" src="search.png" alt="検索"></div>
+            <div class="header-fadeImg">
+             <form class="header-fadeImg-1" action="sample8-1.html" method="get">
+                <input type="text" name="search" value="" placeholder="キーワードを入力">
+                <button>検索</button>
+              </form>
+            </div>
+        </nav>
+        </container>
+    </body>
+</html>

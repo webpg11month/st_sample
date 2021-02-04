@@ -7,6 +7,10 @@
 
 /* スマホ処理 iphoneX*/
 @media screen and (min-width:280px) and (max-width:374px) {
+  /* 
+  header start
+  edit_manshou
+  */
   /* チェックボックスは非表示に */
   .chekc-hidden {
       /*チェックボックス削除*/
@@ -15,6 +19,7 @@
   .mobil-setting{
     width: 100%;
     height: 22vw;
+    position: fixed;
     background-color: #5c5555;
   }
   .header-search-1{
@@ -114,7 +119,7 @@
       position: fixed;
       top: 0;
       right: 100%;
-      z-index: 1;
+      z-index: 30;
       transition: .5s;
   }
   #hamburger-check:checked ~ .hamburger-close {
@@ -199,14 +204,14 @@
     width: 8vw;
     position: fixed;
     margin-top: 6vw;
-    margin-left: 86vw;
+    margin-left: 82vw;
     z-index: 15;
   }
   #fadeInOutImg1 {
     width: 8vw;
     position: fixed;
     margin-top: 3vw;
-    margin-left: 86vw;
+    margin-left: 82vw;
     z-index: 15;
   }
   .header-fadeImg{
@@ -232,8 +237,10 @@
 
   }
   .header-fadeImg-1 {
+    z-index: 15;
     margin-left: 10vw;
   }
+
   button{
     width: 14vw;
     height: 10vw;
@@ -244,6 +251,27 @@
   .size{
     font-size: 1.5rem;
   }
+  /* 
+  header end
+  edit_manshou
+  */
+  /* 
+  footer start
+  edit_manshou
+  */
+  body,
+  #wrapper {
+    display: flex;
+    flex-direction: column;
+    /* メインの間隔を修正できる */
+    min-height: 100vh;
+  }
+  footer {
+    margin-top: auto;
+    height: 20vw;
+    background-color: #5c5555;
+  }
+
 }
 @media screen and (min-width:374px) and (max-width:375px) {
   /* チェックボックスは非表示に */
@@ -483,7 +511,6 @@
     font-size: 1.5rem;
   }
 }
-
 @media screen and (min-width:410px) and (max-width:425px){
   /* チェックボックスは非表示に */
   .chekc-hidden {
@@ -962,7 +989,6 @@
     font-size: 2.5rem;
   }
 }
-
 @media screen and (min-width:767px) and (max-width:768px){
   /* チェックボックスは非表示に */
   .chekc-hidden {
@@ -1202,7 +1228,6 @@
     font-size: 3rem;
   }
 }
-
 @media screen and (min-width:1023px) and (max-width:1024px){
   /* チェックボックスは非表示に */
   .chekc-hidden {

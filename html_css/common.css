@@ -268,7 +268,7 @@
   }
   footer {
     margin-top: auto;
-    height: 20vw;
+    height: 22vw;
     background-color: #5c5555;
   }
   .footer-icon-flex{
@@ -553,7 +553,7 @@
   }
   .mobil-setting{
     width: 100%;
-    height: 22vw;
+    height: 18vw;
     position: fixed;
     background-color: #5c5555;
   }
@@ -1083,7 +1083,7 @@
   }
   .mobil-setting{
     width: 100%;
-    height: 22vw;
+    height: 20vw;
     position: fixed;
     background-color: #5c5555;
   }
@@ -1328,8 +1328,37 @@
   }
   footer {
     margin-top: auto;
-    height: 20vw;
+    height: 15vw;
     background-color: #5c5555;
+  }
+  .footer-icon-flex{
+    margin: 5vw;
+    display: flex;
+    column-gap: 5vw;
+  }
+  body,
+  #wrapper {
+    display: flex;
+    flex-direction: column;
+    /* メインの間隔を修正できる */
+    min-height: 100vh;
+  }
+  footer {
+    margin-top: auto;
+    height: 18vw;
+    background-color: #5c5555;
+  }
+  .fa-twitter-square.size {
+    font-size: 5vw;
+  }
+  .fa-facebook-square.size {
+    font-size: 5vw;
+  }
+  .fa-instagram.size {
+    font-size: 5vw;
+  }
+  .fa-github-square.size {
+    font-size: 5vw;
   }
   .footer-icon-flex{
     margin: 5vw;
@@ -1591,6 +1620,18 @@
     margin-top: auto;
     height: 20vw;
     background-color: #5c5555;
+  }
+  .fa-twitter-square.size {
+    font-size: 5vw;
+  }
+  .fa-facebook-square.size {
+    font-size: 5vw;
+  }
+  .fa-instagram.size {
+    font-size: 5vw;
+  }
+  .fa-github-square.size {
+    font-size: 5vw;
   }
   .footer-icon-flex{
     margin: 5vw;
